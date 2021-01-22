@@ -1,0 +1,33 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-center">
+            Temperature Converter
+          </div>
+          <div class="card-body">
+            <h6 class="card-title">Enter required details to convert</h6>
+            <form [formGroup]="convertForm">
+              <formly-form [model]="convertFormData" [fields]="convertFormFields">
+                <button type="submit" class="btn-primary" (click)="compute()">
+                  Submit
+                </button>
+                <br>
+                <br>
+                <p *ngIf="onSubmit">Temperature in Celsius is {{result}} (Rounded off)</p>
+              </formly-form>
+            </form>
+          </div>
+          <div class="card-footer text-muted text-center">
+            Made with Angular, Bootstrap & Formly
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</main>
+
+
+
+<router-outlet></router-outlet>
